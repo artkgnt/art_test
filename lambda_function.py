@@ -1,6 +1,7 @@
 import json
 import boto3
 import urllib
+from common import config
 
 env = 'dev'
 bk =  'kgi-sanofi'
@@ -15,7 +16,7 @@ def send2dir(file_name):
 def lambda_handler(event, context):
     import config
 
-    cfg = new Config()
+    cfg = new config.Config()
     print cfg.get('any')
     
     s3 = boto3.client('s3')
